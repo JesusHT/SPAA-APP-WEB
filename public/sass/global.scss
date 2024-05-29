@@ -1,0 +1,248 @@
+// Import css-icons (https://fontawesome.com/icons)
+@import url(https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css);
+
+//Global background-colors
+    
+    //Color palette
+    
+    $primary_color:  #c18700;
+    $secondary_color:#0d4755;
+    $lightblue_color:#3e8692;
+    $brown_color:    #8e4b05;
+    $green_color:    #102117;
+    $body-color:     #e5e5e5;
+    
+    
+    //Messages
+
+    $success_color:#00a135;
+    $error_color:  #cc0605;
+    $info_color:   #0096d2;
+    $Warning_color:#e5be01;
+
+    // Hover 
+    $h-error_color:   #a60504;
+    $h-info_color:    #0088be;
+    $h-success_color: #007a28;
+    $h-warning_color: #d1ae01;
+    
+// Color-fonts
+
+    $white_color: #fff;
+    $black_color: #000;
+
+// Global style
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+// Import fonts
+
+@font-face {
+    font-family: 'Antic Didone';
+    src: url('../fonts/Antic_Didone.ttf');
+}
+
+body {
+    background-color: $body-color;
+    font-family: 'Antic Didone'!important;
+    font-weight: bold;
+}
+
+@import url(../css/nav.css);
+@import url(../css/modal.css);
+
+// Background-color message
+$message-color: (
+    "Error":   $error_color,
+    "Info":    $info_color,
+    "Success": $success_color,
+    "Warning": $Warning_color
+);
+
+$hover-color: (
+    "Error":   $h-error_color,
+    "Info":    $h-info_color,
+    "Success": $h-success_color,
+    "Warning": $h-warning_color
+);
+
+$palette-color: (
+    "primary  ":$primary_color,  
+    "secondary":$secondary_color,
+    "lightblue":$lightblue_color,
+    "brown    ":$brown_color,    
+    "green    ":$green_color,    
+    "body     ":$body-color,
+    "success  ":$success_color,
+    "error    ":$error_color,
+    "warning  ":$Warning_color
+);
+
+$margin: (
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+    "4": 40px,
+);
+
+@each $k, $v in $message-color {
+    .Messeges-#{$k}{
+        background-color: $v;
+        color: $white_color;
+        padding: 15px;
+    }
+}
+
+@each $k, $v in $message-color {
+    .text-#{$k}{
+        color: $v;
+    }
+}
+
+@each $k, $v in $message-color {
+    .bg-#{$k}{
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        background-color: $v;
+        color: $white_color;
+        padding: 12px;
+        text-align: center;
+    }
+}
+
+@each $k, $v in $margin {
+    .mb-#{$k}{
+        display: block;
+        margin-bottom: $v;
+    }
+
+}
+
+@each $k, $v in $margin  {
+    .mt-#{$k}{
+        display: block;
+        margin-top: $v;
+    }
+}
+
+@each $k, $v in $palette-color {
+    .bg-#{$k}{
+        background-color: $v;
+    }
+}
+
+@each $k, $v in $message-color {
+    .btn-#{$k}{
+        display: inline-block;
+        padding: 5px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        color: $white_color;
+        background-color: $v;
+        border-style: none;
+        border-radius: 10px;
+    }
+}
+
+@each $k, $v in $hover-color{
+    .btn-#{$k}:hover{
+        background-color: $v;
+    }
+}
+
+.text-white {
+    color: $white_color;
+}
+
+.text-black {
+    color: $black_color;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#paginas {
+
+    ul {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: 5px;
+
+        a {
+            background: rgb(228, 228, 228);
+            border:solid black 1px;
+            color: rgb(50, 50, 50);
+            padding: 5px 15px;
+            text-decoration: none;
+        }
+    }
+
+    .actual {
+        background: rgb(20, 69, 124) !important;
+        color:#fff!important;
+    }
+}
+
+table {
+    margin-top: 15px;
+    margin-bottom: 15px;
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-collapse: separate;
+    background-color: #fff;
+
+    tr, td {
+        border-width: 1px;
+        padding: 5px;
+        border-style: solid;
+        border-color: black;
+        background-color: #fff;
+    }
+
+    thead {
+        tr > td {
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    tr, td {
+        border-width: 1px;
+        padding: 5px;
+        border-style: solid;
+        border-color: black;
+        background-color: #fff;
+
+    }
+
+    thead tr td{
+        background-color: #0d4755;
+        color: #fff;
+    }
+}

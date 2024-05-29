@@ -1,0 +1,29 @@
+@import url('./global.css');
+
+.content-table {
+    display: flex;
+    justify-content: center;
+
+    .pagar {
+        background-color: #c18700;
+        color: #fff;
+        border-style: none;
+        border-radius: 10px;
+    
+        &:hover {
+            background-color: #ad7900;
+        }
+    }
+    
+    .ver {
+        background-color: #0d4755;
+        color: #fff;
+        border-style: none;
+        border-radius: 10px;
+    
+        &:hover {
+            background-color: #0a3944;
+        }
+    }
+}
+
